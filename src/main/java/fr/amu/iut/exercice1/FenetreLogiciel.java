@@ -7,7 +7,7 @@ public class FenetreLogiciel extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // code de l'exercice 1
+        // code de l'exercice 1 (et test commit)
     }
 
     public static void main(String[] args) {
