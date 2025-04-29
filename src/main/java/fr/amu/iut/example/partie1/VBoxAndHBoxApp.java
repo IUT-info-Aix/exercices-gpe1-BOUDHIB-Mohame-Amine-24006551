@@ -1,4 +1,4 @@
-package com.example.partie1;
+package fr.amu.iut.example.partie1;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

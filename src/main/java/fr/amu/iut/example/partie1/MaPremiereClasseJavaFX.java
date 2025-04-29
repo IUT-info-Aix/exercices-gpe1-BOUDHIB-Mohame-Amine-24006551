@@ -1,4 +1,4 @@
-package com.example.partie1;
+package fr.amu.iut.example.partie1;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;

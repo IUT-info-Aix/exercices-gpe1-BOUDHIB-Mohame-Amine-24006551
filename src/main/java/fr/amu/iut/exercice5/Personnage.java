@@ -18,57 +18,72 @@ class Personnage extends Group {
     }
 
     public void deplacerAGauche() {
-        //    ****
-        //   *    *
-        //  *---   *
-        //   *    *
-        //    ****
+        double oldX = getLayoutX();
 
-        //déplacement <----
         if (getLayoutX() >= LARGEUR_PERSONNAGE) {
             setLayoutX(getLayoutX() - LARGEUR_PERSONNAGE);
         }
-        if (!direction.equals("gauche")) {
-            direction = "gauche";
+
+        if (enCollisionAvecObstacle()) {
+            setLayoutX(oldX); // Revenir à l’ancienne position
         }
+
+        direction = "gauche";
+
     }
 
     public void deplacerADroite(double largeurJeu) {
-        //    ****
-        //   *    *
-        //  *   ---*
-        //   *    *
-        //    ****
-        //déplacement ---->
+        double oldX = getLayoutX();
+
         if (getLayoutX() < largeurJeu - LARGEUR_PERSONNAGE) {
             setLayoutX(getLayoutX() + LARGEUR_PERSONNAGE);
         }
-        if (!direction.equals("droite")) {
-            direction = "droite";
+
+        if (enCollisionAvecObstacle()) {
+            setLayoutX(oldX); // Revenir à l’ancienne position
         }
+
+        direction = "droite";
     }
+
 
     public void deplacerEnBas(double hauteurJeu) {
-        //    *****
-        //   *     *
-        //  *   |   *
-        //   *  |  *
-        //    *****
+        double oldY = getLayoutY();
 
+        if (getLayoutY() < hauteurJeu - LARGEUR_PERSONNAGE) {
+            setLayoutY(getLayoutY() + LARGEUR_PERSONNAGE);
+        }
+
+        if (enCollisionAvecObstacle()) {
+            setLayoutY(oldY);
+        }
+
+        direction = "bas";
     }
+
 
     public void deplacerEnHaut() {
-        //    *****
-        //   *  |  *
-        //  *   |   *
-        //   *     *
-        //    *****
+        double oldY = getLayoutY();
 
+        if (getLayoutY() >= LARGEUR_PERSONNAGE) {
+            setLayoutY(getLayoutY() - LARGEUR_PERSONNAGE);
+        }
+
+        if (enCollisionAvecObstacle()) {
+            setLayoutY(oldY); // Revenir à l’ancienne position
+        }
+
+        direction = "haut";
     }
+
 
     boolean estEnCollision(Personnage autrePersonnage) {
         return getBoundsInParent().contains(autrePersonnage.getBoundsInParent())
                 || autrePersonnage.getBoundsInParent().contains(getBoundsInParent());
+    }
+
+    private boolean enCollisionAvecObstacle() {
+        return JeuMain.obstacles.stream().anyMatch(o -> this.getBoundsInParent().intersects(o.getBoundsInParent()));
     }
 
 }
