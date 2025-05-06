@@ -17,7 +17,7 @@ public class CustomButton extends Parent {
 
     public CustomButton() {
         StackPane st = new StackPane();
-        image = new ImageView(new Image("exercice9/Rond.png"));
+        image = new ImageView(new Image(String.valueOf(getClass().getResource("Rond.png"))));
         Label label = new Label("Clic");
         label.setFont(Font.font("Tahoma", FontWeight.BOLD, 15));
         label.setTextFill(Color.ORANGERED);
