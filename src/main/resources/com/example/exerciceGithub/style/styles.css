@@ -1,0 +1,46 @@
+.top-bar {
+    background-color: #24292e;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.top-bar .text-field {
+    -fx-background-radius: 4;
+    -fx-padding: 4;
+}
+
+.primary-button {
+    -fx-background-color: #2da44e;
+    -fx-text-fill: white;
+    -fx-padding: 8 16;
+    -fx-background-radius: 6;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2c974b;
+}
+
+.hero {
+    background-color: #f6f8fa;
+    text-align: center;
+}
+
+.headline {
+    -fx-fill: #24292e;
+    -fx-font-weight: bold;
+}
+
+.subtext {
+    -fx-fill: #586069;
+    -fx-font-size: 14px;
+}
+
+.footer {
+    background-color: #f6f8fa;
+    font-size: 12px;
+}
