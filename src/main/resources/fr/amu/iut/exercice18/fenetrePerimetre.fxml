@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="fr.amu.iut.exercice18.PanneauPrincipal"
+          hgap="10" vgap="10"
+          prefWidth="400" prefHeight="600">
+    <!-- Padding explicite -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <!-- Colonnes proportionnelles -->
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="30"/>
+        <ColumnConstraints percentWidth="30"/>
+        <ColumnConstraints percentWidth="20"/>
+    </columnConstraints>
+    <!-- Lignes pour organiser verticalement -->
+    <rowConstraints>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="30"/>
+    </rowConstraints>
+
+    <!-- Label A centré -->
+    <Label text="A"
+           GridPane.rowIndex="0" GridPane.columnIndex="0"
+           GridPane.columnSpan="4"
+           GridPane.halignment="CENTER"/>
+
+    <!-- xA -->
+    <Label text="xA"
+           GridPane.rowIndex="1" GridPane.columnIndex="0"
+           GridPane.halignment="CENTER"/>
+    <Slider fx:id="sliderXA"
+            min="0" max="20" value="10"
+            showTickMarks="true" showTickLabels="true"
+            majorTickUnit="5" minorTickCount="4"
+            GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+    <!-- yA -->
+    <Label text="yA"
+           GridPane.rowIndex="2" GridPane.columnIndex="0"
+           GridPane.halignment="CENTER"/>
+    <Slider fx:id="sliderYA"
+            min="0" max="20" value="5"
+            showTickMarks="true" showTickLabels="true"
+            majorTickUnit="5" minorTickCount="4"
+            GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+    <!-- Label B centré -->
+    <Label text="B"
+           GridPane.rowIndex="3" GridPane.columnIndex="0"
+           GridPane.columnSpan="4"
+           GridPane.halignment="CENTER"/>
+
+    <!-- xB -->
+    <Label text="xB"
+           GridPane.rowIndex="4" GridPane.columnIndex="0"
+           GridPane.halignment="CENTER"/>
+    <HBox spacing="5" alignment="CENTER"
+          GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="3">
+        <Button fx:id="xBMinusButton" text="-" onAction="#decrementerBx"/>
+        <TextField fx:id="xBField" editable="false" prefWidth="50"/>
+        <Button fx:id="xBPlusButton" text="+" onAction="#incrementerBx"/>
+    </HBox>
+
+    <!-- yB -->
+    <Label text="yB"
+           GridPane.rowIndex="5" GridPane.columnIndex="0"
+           GridPane.halignment="CENTER"/>
+    <HBox spacing="5" alignment="CENTER"
+          GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="3">
+        <Button fx:id="yBMinusButton" text="-" onAction="#setByMinusAction"/>
+        <TextField fx:id="yBField" editable="false" prefWidth="50"/>
+        <Button fx:id="yBPlusButton" text="+" onAction="#setByPlusAction"/>
+    </HBox>
+
+    <!-- Perimeter -->
+    <Label text="Perimeter"
+           GridPane.rowIndex="6" GridPane.columnIndex="0"
+           GridPane.halignment="CENTER"/>
+    <TextField fx:id="perimetreField" editable="false"
+               GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+    <!-- Pane de dessin (fond cyan) -->
+    <Pane fx:id="dessinPane"
+          style="-fx-background-color: cyan;"
+          prefHeight="200"
+          GridPane.rowIndex="7" GridPane.columnIndex="0"
+          GridPane.columnSpan="4"/>
+</GridPane>

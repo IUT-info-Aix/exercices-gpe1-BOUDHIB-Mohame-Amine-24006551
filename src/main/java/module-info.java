@@ -45,6 +45,8 @@ module tp.intro.javafx {
     exports com.example.exerciceGithub;
     opens fr.amu.iut.exercice17 to javafx.fxml;
     exports fr.amu.iut.exercice17;
+    opens fr.amu.iut.exercice18 to javafx.fxml;
+    exports fr.amu.iut.exercice18;
 }
 
 
